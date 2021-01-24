@@ -2,13 +2,13 @@
     include("../util/middleware.php");
     include("../util/db.php");
 
-    $title = '';
-    if (isset($_GET['title'])) {
-        $title = $_GET['title'];
-        $query = "SELECT * FROM task WHERE title LIKE '%$title%'" ;
+    $name = '';
+    if (isset($_GET['name'])) {
+        $name = $_GET['name'];
+        $query = "SELECT * FROM users WHERE name LIKE '%$name%'" ;
     }
     else {
-        $query = "SELECT * FROM task";
+        $query = "SELECT * FROM users";
     }
     $response = mysqli_query($conn, $query);
 
@@ -19,7 +19,7 @@
 <div class="container">    
     <a class="btn btn-primary" href="./create.php">Crear registro</a>
     <form action="./index.php">
-        <input type="search" name="title" value="<?php echo $title; ?>">
+        <input type="search" name="name" value="<?php echo $name; ?>">
     </form>
 
     <table class="table">
@@ -28,9 +28,10 @@
 
         <tr>
             <th scope="col">ID</th>
-            <th scope="col">TITLE</th>
-            <th scope="col">DESCRIPTION</th>
-            <th scope="col">DATES</th> 
+            <th scope="col">NAME</th>
+            <th scope="col">USERNAME</th>
+            <th scope="col">EMAIL</th>
+            <th scope="col">DATE</th>  
             <th>Opciones</th>            
         </tr>
     </thead>
@@ -41,8 +42,9 @@
                 echo "
                     <tr>
                         <th>" . $item["id"]. "</th>". 
-                        "<th>" . $item["title"]. "</th>".
-                        "<th>" . $item["description"]. "</th>".
+                        "<th>" . $item["name"]. "</th>".
+                        "<th>" . $item["username"]. "</th>".
+                        "<th>" . $item["email"]. "</th>".
                         "<th>" . $item["created_at"]. "</th>".
                         "<th>" . 
                             "<a class='btn btn-success' href='./show.php?id=".$item["id"]."'>Show</a>".
