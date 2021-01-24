@@ -1,9 +1,10 @@
 <?php 
-    include("util/db.php"); 
+    include("../util/middleware.php"); 
+    include("../util/db.php"); 
     //session_start();
 
     if (!isset($_POST["id"])) {
-        header("Location: lista.php");
+        header("Location: index.php");
         return;
     }
 

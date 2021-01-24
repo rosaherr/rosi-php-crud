@@ -1,6 +1,6 @@
 <?php
-    include("util/db.php");
-    include("util/middleware.php");
+    include("../util/db.php");
+    include("../util/middleware.php");
 
 
     if(isset($_GET['save_task'])){
@@ -14,7 +14,7 @@
 
         }
         $_SESSION ['message'] = 'Tarea ' .$title. ' creada Satisfactoriamente ';
-        header("Location: lista.php");
+        header("Location: index.php");
     }
 
 

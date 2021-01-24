@@ -1,7 +1,7 @@
 <?php 
 
-    include("util/middleware.php"); 
-    include("util/db.php");
+    include("../util/middleware.php"); 
+    include("../util/db.php");
 
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
@@ -14,7 +14,7 @@
         $_SESSION ['message'] = 'Tarea Removida Satisfactoriamente ';
     }
     
-    header("Location: lista.php");
+    header("Location: index.php");
 
 ?>
 

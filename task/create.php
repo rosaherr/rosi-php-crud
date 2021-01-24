@@ -1,4 +1,8 @@
-<?php include("includes/header.php") ?>
+
+<?php 
+    include("../util/middleware.php");
+    include("../includes/header.php"); 
+?>
 
 <div class="container p-4">
     
@@ -7,7 +11,7 @@
         <div class="col-md4">
 
             <div class="card card-body">
-                <form action="save_task.php" method="GET">
+                <form action="store.php" method="GET">
                     <div class="form-group">
                         <input type="text" name="title" class="form-control"
                         placeholder="Task title" autofocus>
@@ -35,7 +39,7 @@
 </div>
 
 
-<?php include("includes/footer.php") ?>
+<?php include("../includes/footer.php") ?>
 
 
 
