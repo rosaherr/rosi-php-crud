@@ -5,10 +5,12 @@
     $title = '';
     if (isset($_GET['title'])) {
         $title = $_GET['title'];
-        $query = "SELECT * FROM task WHERE title LIKE '%$title%'" ;
+        // WHERE (username LIKE 'ross') AND (password LIKE 'xx')
+        $query = "SELECT * FROM task WHERE (title LIKE '%$title%') AND (user_id LIKE {$_SESSION['id']})" ;
     }
     else {
-        $query = "SELECT * FROM task";
+        // SELECT * FROM `task` WHERE user_id = 2
+        $query = "SELECT * FROM task WHERE user_id = " . $_SESSION['id'] ;
     }
     $response = mysqli_query($conn, $query);
 

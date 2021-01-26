@@ -16,8 +16,8 @@
 <body>
 <form action="autenticacion.php" method="post" >
     <div class="form-element">
-        <label>Usuario</label>
-        <input type="text" name="usuario" pattern="[a-zA-Z0-9]+" required />
+        <label>Username</label>
+        <input type="text" name="username" pattern="[a-zA-Z0-9]+" required />
     </div>
     <div class="form-element">
         <label>Password</label>

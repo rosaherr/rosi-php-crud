@@ -3,17 +3,19 @@
     include("../util/middleware.php");
 
 
-    if(isset($_GET['save_task'])){
-        $title= $_GET['title'];
-        $description= $_GET['description'];
+    if(isset($_POST['save_user'])){
+        $name= $_POST['name'];
+        $email= $_POST['email'];
+        $username= $_POST['username'];
+        $password= $_POST['password'];
 
-        $query= "INSERT INTO task(title, description) VALUES ('$title', '$description')";
+        $query= "INSERT INTO users(name, email, username, password) VALUES ('$name', '$email', '$username', '$password')";
         $result= mysqli_query($conn, $query);
         if(!$result){
             die("Query failed");
 
         }
-        $_SESSION ['message'] = 'Tarea ' .$title. ' creada Satisfactoriamente ';
+        $_SESSION ['message'] = 'Usuario ' .$username. ' creado Satisfactoriamente ';
         header("Location: index.php");
     }
 

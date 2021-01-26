@@ -5,13 +5,10 @@
 
     if(isset($_GET['id'])) {
         $id = $_GET['id'];
-        $query =  "DELETE FROM task WHERE task.id = $id";
+        $query =  "DELETE FROM users WHERE users.id = $id";
         $response = mysqli_query($conn, $query);
-        // if (!$response) {
-        //     die("no funciona");
-        // }
 
-        $_SESSION ['message'] = 'Tarea Removida Satisfactoriamente ';
+        $_SESSION ['message'] = 'Usuario' .$username. 'Removido Satisfactoriamente ';
     }
     
     header("Location: index.php");

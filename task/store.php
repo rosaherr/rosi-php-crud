@@ -7,7 +7,8 @@
         $title= $_GET['title'];
         $description= $_GET['description'];
 
-        $query= "INSERT INTO task(title, description) VALUES ('$title', '$description')";
+        // $_SESSION['id']
+        $query= "INSERT INTO task(title, description, user_id) VALUES ('$title', '$description', {$_SESSION['id']})";
         $result= mysqli_query($conn, $query);
         if(!$result){
             die("Query failed");

@@ -35,7 +35,7 @@
             </ul>
         </div>
         <div class="d-flex" style="width: 200px">
-            <p class="text-white">Hola: <?php echo $_SESSION['user']; ?> </p>
+            <p class="text-white">Hola: <?php echo $_SESSION['username']; ?> </p>
         </div>
 
     </div>
